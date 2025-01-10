@@ -1,0 +1,12 @@
+{
+    "manifest_version": 3,
+    "name": "time tracker",
+    "version": "1.0",
+    "description": "It will tell you the time spent on a particular website in hours, minutes, and seconds.",
+    "content_scripts": [
+      {
+        "matches": ["https://*/*"],
+        "js": ["scripts/logic.js"]
+      }
+    ]
+  }
