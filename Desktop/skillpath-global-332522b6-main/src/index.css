@@ -1,0 +1,266 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tekhlym Global Design System
+   Philosophy: Calm, trustworthy, skill-first
+   Inspiration: Linear clarity, Stripe professionalism, Notion warmth
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Rich cream base - warm and inviting */
+    --background: 45 30% 97%;
+    --foreground: 215 28% 12%;
+
+    /* Cards with subtle depth */
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 12%;
+
+    /* Popover matches card */
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 12%;
+
+    /* Deep navy primary - authoritative and premium */
+    --primary: 215 50% 22%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Soft neutral secondary */
+    --secondary: 220 15% 95%;
+    --secondary-foreground: 215 28% 20%;
+
+    /* Muted grays with warmth */
+    --muted: 220 12% 93%;
+    --muted-foreground: 215 15% 40%;
+
+    /* Deep teal accent - professional growth */
+    --accent: 192 65% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders - refined, subtle */
+    --border: 220 15% 87%;
+    --input: 220 15% 87%;
+    --ring: 192 65% 35%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar */
+    --sidebar-background: 220 15% 96%;
+    --sidebar-foreground: 215 28% 12%;
+    --sidebar-primary: 215 50% 22%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 192 65% 35%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 15% 87%;
+    --sidebar-ring: 192 65% 35%;
+
+    /* Custom Tekhlym tokens */
+    --tekhlym-cream: 45 30% 97%;
+    --tekhlym-slate: 215 50% 22%;
+    --tekhlym-teal: 192 65% 35%;
+    --tekhlym-teal-soft: 192 40% 96%;
+    --tekhlym-warm-gray: 215 10% 50%;
+    --tekhlym-text-secondary: 215 15% 40%;
+    
+    /* Category colors - vibrant but professional */
+    --category-tech: 215 70% 50%;
+    --category-business: 35 75% 48%;
+    --category-creative: 330 60% 52%;
+    --category-professional: 192 65% 35%;
+  }
+
+  .dark {
+    --background: 220 25% 8%;
+    --foreground: 40 15% 92%;
+
+    --card: 220 25% 10%;
+    --card-foreground: 40 15% 92%;
+
+    --popover: 220 25% 10%;
+    --popover-foreground: 40 15% 92%;
+
+    --primary: 40 15% 92%;
+    --primary-foreground: 220 25% 8%;
+
+    --secondary: 220 20% 15%;
+    --secondary-foreground: 40 15% 85%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 175 45% 45%;
+    --accent-foreground: 220 25% 8%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 40 33% 98%;
+
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 175 45% 45%;
+
+    --sidebar-background: 220 25% 6%;
+    --sidebar-foreground: 40 15% 92%;
+    --sidebar-primary: 175 45% 45%;
+    --sidebar-primary-foreground: 220 25% 8%;
+    --sidebar-accent: 220 20% 15%;
+    --sidebar-accent-foreground: 40 15% 92%;
+    --sidebar-border: 220 20% 18%;
+    --sidebar-ring: 175 45% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight text-foreground;
+  }
+
+  h1 {
+    @apply text-5xl md:text-6xl lg:text-7xl leading-[1.08];
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.12];
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl font-semibold;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+
+  p {
+    @apply text-lg md:text-xl leading-relaxed;
+  }
+}
+
+@layer components {
+  /* Section spacing - tighter for professional feel */
+  .section {
+    @apply py-14 md:py-20 lg:py-24;
+  }
+
+  .section-sm {
+    @apply py-10 md:py-14 lg:py-16;
+  }
+
+  /* Hero section - full viewport with enhanced styling */
+  .section-hero {
+    @apply min-h-screen flex items-center py-12;
+    background: 
+      radial-gradient(ellipse 100% 80% at 50% -20%, hsl(var(--accent) / 0.08), transparent),
+      radial-gradient(ellipse 80% 50% at 100% 50%, hsl(var(--accent) / 0.05), transparent),
+      radial-gradient(ellipse 60% 40% at 0% 80%, hsl(var(--primary) / 0.05), transparent),
+      hsl(var(--background));
+  }
+
+  /* Container */
+  .container-tight {
+    @apply max-w-4xl mx-auto px-6;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto px-6;
+  }
+
+  /* Text utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Card hover */
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card-hover:hover {
+    @apply -translate-y-1 shadow-lg;
+    box-shadow: 0 20px 40px -12px hsl(var(--tekhlym-slate) / 0.08);
+  }
+
+  /* Subtle gradient backgrounds */
+  .bg-gradient-subtle {
+    background: linear-gradient(
+      180deg,
+      hsl(var(--background)) 0%,
+      hsl(var(--muted) / 0.5) 100%
+    );
+  }
+
+  .bg-gradient-teal {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--tekhlym-teal-soft)) 0%,
+      hsl(var(--background)) 100%
+    );
+  }
+
+  /* Focus states */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background;
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Stagger children */
+  .stagger-children > * {
+    animation: slideUp 0.5s ease-out forwards;
+    opacity: 0;
+  }
+
+  .stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+  .stagger-children > *:nth-child(2) { animation-delay: 80ms; }
+  .stagger-children > *:nth-child(3) { animation-delay: 160ms; }
+  .stagger-children > *:nth-child(4) { animation-delay: 240ms; }
+  .stagger-children > *:nth-child(5) { animation-delay: 320ms; }
+  .stagger-children > *:nth-child(6) { animation-delay: 400ms; }
+}
